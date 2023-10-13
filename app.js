@@ -89,18 +89,18 @@ const currentProductSizes = document.querySelectorAll(".size");
 
 menuItems.forEach((item, index) => {
   item.addEventListener("click", () => {
-    //change the current slide
+    // 슬라이드 변경
     wrapper.style.transform = `translateX(${-100 * index}vw)`;
 
-    //change the choosen product
+    // 상품 변경
     choosenProduct = products[index];
 
-    //change texts of currentProduct
+    // 상품 설명 변경
     currentProductTitle.textContent = choosenProduct.title;
     currentProductPrice.textContent = "$" + choosenProduct.price;
     currentProductImg.src = choosenProduct.colors[0].img;
 
-    //assing new colors
+    // 색상 변경
     currentProductColors.forEach((color, index) => {
       color.style.backgroundColor = choosenProduct.colors[index].code;
     });
